@@ -1,0 +1,660 @@
+ html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(7, 74, 33, 0.402);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+nav ul {
+  display: flex;
+  gap: 15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #b8ffd0;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+
+/* === Hero Section === */
+#wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: url('newbackground.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6.5rem;
+  background-attachment: fixed;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10rem 5%;
+  box-sizing: border-box;
+}
+
+.heroTextBox {
+  max-width: 420px;
+  width: 100%;
+  color: white;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.heroTextBox h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.heroTextBox p {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.myButton {
+  display: inline-block;
+  background: #04563d;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 2rem;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.myButton:hover {
+  background: white;
+  color: #04563d;
+  transform: scale(1.05);
+}
+/* modal box */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(163, 206, 255, 0.7);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #2cb350;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.modal-content input {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #f8f8f8;
+  color: white;
+  font-size: 14px;
+  text-align: left;
+}
+ 
+.modal-content button {
+  align-self: flex-end;
+  width: auto;
+  padding: 12px 26px;
+  background: #2a652c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.modal-content button:hover {
+  background: white;
+  color: #133e23;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* speaker */
+.speakers {
+  width: 100%;
+  background: #068031;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.speakers h2 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.myCardLayout {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  row-gap: 5rem;
+  column-gap: 4rem;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.myCard {
+  background: rgba(105, 105, 105, 0.15);
+  padding: 20px;
+  border-radius: 30px;
+  text-align: left;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.myCard:hover {
+  transform: scale(1.03);
+  border: 1.3px solid #90d065;
+}
+
+.myCard img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.myCard h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.myCard h4 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #0a3e0b;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.myCard p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: white;
+  flex-grow: 1;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.cardBar {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-top: 3px;
+}
+
+.cardButton {
+  background:  #085c12;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.cardButton:hover {
+  background: rgb(255, 172, 56);
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 900px) {
+  .myCardLayout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .myCardLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* schedule */
+.schedule {
+  text-align: left;
+  padding: 80px 10%;
+  background: #068031;
+  color: white;
+}
+
+.schedule h2 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.schedule-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.schedule .day {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 16px;
+  width: 300px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.schedule .day:hover {
+  transform: scale(1.03);
+}
+
+.schedule .day h3 {
+  margin-bottom: 15px;
+  color: #085c12;
+  font-size: 22px;
+}
+
+.schedule .day ul {
+  list-style: none;
+  padding: 0;
+}
+
+.schedule .day ul li {
+  margin: 8px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: 0;
+  border-left: none;
+  position: relative;
+  font-weight: 500;
+}
+
+.schedule .day ul li span {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  color: #b76df1;
+  margin-bottom: 3px;
+}
+
+/* location */
+.location-section {
+  background-color: #068031;
+  padding: 60px 10%;
+  color: white;
+  scroll-margin-top: 100px;
+}
+
+.location-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.location-header h2 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.location-header p {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.location-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: left;
+  align-items: stretch;
+}
+
+.map-box {
+  flex: 1 1 50%;
+  min-height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.location-info-box {
+  flex: 1 1 40%;
+  background-color: #133e1c;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.location-info-box h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.location-info-box p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 5px 0;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: left;
+}
+
+.social-links .myButton {
+  background: #178225;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.social-links .myButton:hover {
+  background: white;
+  color: #0c002b;
+}
+
+@media screen and (max-width: 768px) {
+  .location-container {
+    flex-direction: column;
+  }
+
+  .map-box, .location-info-box {
+    flex: 1 1 100%;
+  }
+}
+ 
+.contact-section {
+  background: #068031;
+  padding: 10px 10%;
+  color: white;
+  text-align: center;
+  scroll-margin-top: 100px; 
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.contact-section p {
+  font-size: 16px;
+  color: #ccc;
+  margin: 8px 0;
+}
+
+.contact-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.contact-buttons .myButton {
+  font-size: 14px;
+  padding: 10px 20px;
+}
+/* footer */
+footer {
+  background: #034e1d;
+  color: white;
+  padding: 40px 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  scroll-margin-top: 100px;
+}
+
+.footer-left h3 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-left p,
+.footer-right p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.footer-links h4 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin: 6px 0;
+}
+
+.footer-links a {
+  color:rgb(160, 248, 119);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+  html {
+    font-size: 66%;
+  }
+
+  nav ul {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  header {
+    padding: 8rem 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .heroTextBox {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .heroTextBox h1 {
+    font-size: 5rem;
+  }
+
+  .heroTextBox p {
+    font-size: 1.9rem;
+  }
+
+  .myCardLayout {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 6rem;
+    column-gap: 3rem;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 66%;
+  }
+
+  nav ul {
+    flex-direction: row; 
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  nav ul li a {
+    font-size: 1.6rem;
+  }
+
+  header {
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 1rem;
+  }
+
+  .heroTextBox h1 {
+    font-size: 4.7rem;
+  }
+
+  .heroTextBox p {
+    font-size: 1.8rem;
+  }
+
+  .myCardLayout {
+    grid-template-columns: 1fr;
+    row-gap: 6rem;
+    padding: 2rem;
+  }
+
+  .schedule-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location-container {
+    flex-direction: column;
+  }
+
+  .map-box, .location-info-box {
+    flex: 1 1 100%;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .footer-right {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .footer-links ul {
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  }
